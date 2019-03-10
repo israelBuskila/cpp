@@ -43,3 +43,4 @@ ans=2
 fi
 
 echo $ans
+exit $ans
