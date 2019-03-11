@@ -2,7 +2,7 @@
 folderName=$1
 executble=$2
 currentLocation=`pwd`
-
+shift 2
 cd $folderName
 make >> /dev/null 2>&1
 executMake=$?
@@ -12,7 +12,7 @@ echo 7
 exit 7
 fi
 
-valgrind --leak-check=full --error-exitcode=1 >> /dev/null 2>&1 ./$executble 
+valgrind --leak-check=full --error-exitcode=1 >> /dev/null 2>&1 ./$executble $@ 
 val=$?
 erval=PASS
 if [ $val -eq 1 ]; then
