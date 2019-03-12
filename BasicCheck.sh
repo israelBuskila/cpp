@@ -7,8 +7,6 @@ cd $folderName
 make >> /dev/null 2>&1
 executMake=$?
 
-cd $currentLocation
-
 if [ $executMake -ne 0 ]; then
 echo Makefile did not found
 echo 7
@@ -44,6 +42,6 @@ fi
 if [ $val -eq 1 ] && [ $hel -ne 1 ]; then
 ans=2
 fi
-
+cd $currentLocation
 echo $ans
 exit $ans
