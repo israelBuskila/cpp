@@ -6,6 +6,9 @@ shift 2
 cd $folderName
 make >> /dev/null 2>&1
 executMake=$?
+
+cd $currentLocation
+
 if [ $executMake -ne 0 ]; then
 echo Makefile did not found
 echo 7
